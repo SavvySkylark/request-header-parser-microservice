@@ -17,8 +17,12 @@ app.get("/", function (request, response) {
 });
 
 app.get("/api/whoami", function(req, res) {
-  console.log(req.headers);
-  res.end();
+  var myResponse = {
+    "ip": req.ip,
+    "language": req.acceptsLanguages()[0]
+  }
+  console.log(req.headers['user-agent']);
+  res.end(JSON.stringify(myResponse));
 });
 
 app.get("/dreams", function (request, response) {
