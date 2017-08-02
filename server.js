@@ -17,7 +17,8 @@ app.get("/", function (request, response) {
 });
 
 app.get("/api/whoami", function(req, res) {
-  res.send
+  console.log(req.headers);
+  res.end();
 });
 
 app.get("/dreams", function (request, response) {
