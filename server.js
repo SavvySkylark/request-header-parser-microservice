@@ -17,9 +17,16 @@ app.get("/", function (request, response) {
 });
 
 app.get("/api/whoami", function(req, res) {
+  var userAgent = req.headers['user-agent'];
+  var startIndex = userAgent.indexOf('(');
+  var endIndex = userAgent.indexOf(')');
+  
+  var software = userAgent.substring(startIndex + 1, endIndex);
+  
   var myResponse = {
     "ip": req.ip,
-    "language": req.acceptsLanguages()[0]
+    "language": req.acceptsLanguages()[0],
+    "software": software
   }
   console.log(req.headers['user-agent']);
   res.end(JSON.stringify(myResponse));
