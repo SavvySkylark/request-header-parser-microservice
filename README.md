@@ -4,6 +4,14 @@ This is an implementation of a request header parser service project for [free c
 
 ## Example usage:
 
-<https://amsuing-trombone.glitch.me/api/whoami/>
+<https://amusing-trombone.glitch.me/api/whoami/>
 
-## Example 
+## Example output:
+
+```
+{
+  ip: "::ffff:127.0.0.1",
+  language: "en-US",
+  software: "X11; Linux x86_64"
+}
+```
